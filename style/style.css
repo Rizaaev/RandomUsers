@@ -1,0 +1,109 @@
+
+
+body{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#container {
+margin: 10px auto 0 auto;
+    border:solid 1px lightblue;
+    width: 1200px;
+    border-radius: 5px;
+    padding: 15px;
+    position: relative;
+    background-color: #ecebed;
+}
+.search-block {
+    display: inline-block;
+}
+ul {
+
+    padding: 5px 0px 5px 20px;
+}
+.list-details-for-user {
+    display: inline-block;
+    min-width: 300px;
+}
+.header-text {
+    text-align: center;
+    font-size: 36px;
+}
+.list_header ul {
+    min-height: 50px;
+    margin: 0px ;
+    background-color: #ecebed;
+}
+.menu {
+    margin-bottom: 20px;
+}
+.users_info {
+    min-height: 50px;
+    margin: 0px;
+    /*margin: 0px 20px 10px 20px;*/
+}
+#con .block-bg {
+    border: none;
+    margin: 0px;
+}
+.modal-demo {
+    display: inline-block;
+    float: right;
+}
+#con .panel-body {
+    background-color: #a9a4a8;
+    border: none;
+}
+#con .accordion-toggle:active, #con .accordion-toggle:hover, #con .accordion-toggle:focus {
+    text-decoration: none;
+}
+.block-bg1 .block-bg:nth-child(2n) ul, #con .block-bg1 .block-bg:nth-child(2n) .panel-body {
+    background-color: #ecebed;
+}
+.users_info {
+    background-color: #a9a4a8;
+}
+#con .users_info:hover {
+    background-color: #68696c;
+}
+.users_info li, .list_header ul li {
+    display: inline-block;
+    min-width: 170px;
+}
+.users_info li:first-child, .list_header ul li:first-child {
+    min-width: 80px;
+    vertical-align: middle;
+}
+.users_info li:first-child img {
+    border-radius: 30px;
+    border: 3px solid white;
+}
+.details-block img {
+    border-radius: 100px;
+    border: 3px solid white;
+}
+.text-upper:first-letter {
+     text-transform: uppercase
+ }
+.details-block p {
+    font-size: 24px;
+    margin-left: 20px;
+}
+.details-block li {
+    list-style-type: none;
+}
+.user-img {
+    display: inline-block;
+}
+#con .panel-default {
+    margin: 0px 15px;
+}
+.panel-heading {
+    padding: 0px;
+}
+.fa-female:before, .fa-male:before {
+    margin-left: 10px;
+}
