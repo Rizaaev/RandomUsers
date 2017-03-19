@@ -7,7 +7,7 @@ app.factory('dataService', function($http, $q){
         getUsersData: function(){
 
             var deferred = $q.defer();
-            var numberOfUsers = 19;
+            var numberOfUsers = 21;
             var options = {
                 method: 'GET',
                 url: 'https://randomuser.me/api/?results='+numberOfUsers
@@ -15,7 +15,6 @@ app.factory('dataService', function($http, $q){
             };
             var callback = function (response) {
                 deferred.resolve(response.data);
-                console.log(response);
             };
             var errorCallBack = function (response) {
                 deferred.reject(response);
@@ -86,7 +85,6 @@ app.controller('usersAccordionCtrl', function ($uibModal, $scope, dataService) {
 
     $scope.promiseObj.then(function(value) {
         $scope.results = value;
-        console.log(value);
         $scope.users = $scope.results.results;
         $scope.userLength = $scope.users.length;
         $scope.status = {
@@ -107,6 +105,7 @@ app.controller('usersAccordionCtrl', function ($uibModal, $scope, dataService) {
         $scope.status.isCustomHeaderOpen[index] = !$scope.status.isCustomHeaderOpen[index];
     };
 
+    //creating modal window
     $scope.animationsEnabled = true;
 
     $scope.open = function (size) {

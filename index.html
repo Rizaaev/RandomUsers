@@ -13,73 +13,71 @@
 </head>
 <body>
     <div ng-controller="usersAccordionCtrl">
-        <div id="con">
-            <div id="container">
-                <div class="header-text">Random Users</div>
-                <div class="menu">
-                    <div class="search-block">
+        <div id="container">
+            <div class="header-text">Random Users</div>
+            <div class="menu">
+                <div class="search-block">
                         Search by first name: <input type="text" ng-model="search.name.first">
-                    </div>
-                    <div class="modal-demo">
-                        <div>
-                            <button type="button" class="btn btn-default pull-right" ng-click="open('lg')">Show chart</button>
-                        </div>
+                </div>
+                <div class="modal-demo">
+                    <div>
+                        <button type="button" class="btn btn-default pull-right" ng-click="open('lg')">Show chart</button>
                     </div>
                 </div>
-                <div class="list_header">
-                    <ul>
-                        <li></li>
-                        <li>Last</li>
-                        <li>First</li>
-                        <li>Username</li>
-                        <li>Phone</li>
-                        <li>Location</li>
-                        <li></li>
-                    </ul>
-                </div>
-                <uib-accordion close-others="oneAtATime" class="block-bg1">
-                    <div uib-accordion-group ng-repeat="user in users | filter: search" class="block-bg">
-                        <uib-accordion-heading is-open="status.isCustomHeaderOpen[$index] ">
-                            <div ng-click="toggleAllItems($index)" class="block-bg">
-                                <ul class="users_info block-bg">
-                                    <li>
-                                        <img ng-src="{{user.picture.thumbnail}}" alt="">
-                                    </li>
-                                    <li>{{user.name.last}}</li>
-                                    <li>{{user.name.first}}</li>
-                                    <li>{{user.login.username}}</li>
-                                    <li>{{user.phone}}</li>
-                                    <li>{{user.location.city}}</li>
-                                    <li><i class="pull-right fa" ng-class="{'fa-minus': status.isCustomHeaderOpen[$index], 'fa-plus': !status.isCustomHeaderOpen[$index]}"></i></li>
-                                </ul>
-                            </div>
-                        </uib-accordion-heading>
-                        <div class="details-block">
-                            <div class="user-name">
-                                <p class="text-upper">{{user.name.first}}<i ng-class="('{{user.gender}}' == 'male') ? 'fa-male' : 'fa-female'" class="fa"></i></p>
-                            </div>
-                            <ul class="list-details-for-user">
-                                <li><strong>Username:</strong> {{  user.login.username}}</li>
-                                <li><strong>Registered:</strong> {{  user.registered}}</li>
-                                <li><strong>Email:</strong> {{  user.email}}</li>
-                            </ul>
-                            <ul class="list-details-for-user">
-                                <li><strong>Address:</strong> {{  user.location.street}}</li>
-                                <li><strong>City:</strong> {{  user.location.city}}</li>
-                                <li><strong>Zip Code:</strong> {{  user.location.postcode}}</li>
-                            </ul>
-                            <ul class="list-details-for-user">
-                                <li><strong>Birthday:</strong> {{  user.dob}}</li>
-                                <li><strong>Phone:</strong> {{  user.phone}}</li>
-                                <li><strong>Cell:</strong> {{  user.cell}}</li>
-                            </ul>
-                            <div class="user-img">
-                                <img ng-src="{{user.picture.large}}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </uib-accordion>
             </div>
+            <div class="list_header">
+                <ul>
+                    <li></li>
+                    <li>Last</li>
+                    <li>First</li>
+                    <li>Username</li>
+                    <li>Phone</li>
+                    <li>Location</li>
+                    <li></li>
+                </ul>
+            </div>
+            <uib-accordion close-others="oneAtATime" class="block-bg1">
+                <div uib-accordion-group ng-repeat="user in users | filter: search" class="block-bg">
+                    <uib-accordion-heading is-open="status.isCustomHeaderOpen[$index] ">
+                        <div ng-click="toggleAllItems($index)" class="block-bg">
+                            <ul class="users_info block-bg">
+                                <li>
+                                    <img ng-src="{{user.picture.thumbnail}}" alt="">
+                                </li>
+                                <li class="text-upper">{{user.name.last}}</li>
+                                <li class="text-upper">{{user.name.first}}</li>
+                                <li>{{user.login.username}}</li>
+                                <li>{{user.phone}}</li>
+                                <li class="text-upper">{{user.location.city}}</li>
+                                <li><i class="pull-right fa" ng-class="{'fa-minus': status.isCustomHeaderOpen[$index], 'fa-plus': !status.isCustomHeaderOpen[$index]}"></i></li>
+                            </ul>
+                        </div>
+                    </uib-accordion-heading>
+                    <div class="details-block">
+                        <div class="user-name">
+                            <p class="text-upper">{{user.name.first}}<i ng-class="('{{user.gender}}' == 'male') ? 'fa-male' : 'fa-female'" class="fa"></i></p>
+                        </div>
+                        <ul class="list-details-for-user">
+                            <li><strong>Username:</strong> {{  user.login.username}}</li>
+                            <li><strong>Registered:</strong> {{  user.registered}}</li>
+                            <li><strong>Email:</strong> {{  user.email}}</li>
+                        </ul>
+                        <ul class="list-details-for-user">
+                            <li><strong>Address:</strong> {{  user.location.street}}</li>
+                            <li><strong>City:</strong> <span class="text-upper">{{  user.location.city}}</span></li>
+                            <li><strong>Zip Code:</strong> {{  user.location.postcode}}</li>
+                        </ul>
+                        <ul class="list-details-for-user">
+                            <li><strong>Birthday:</strong> {{  user.dob}}</li>
+                            <li><strong>Phone:</strong> {{  user.phone}}</li>
+                            <li><strong>Cell:</strong> {{  user.cell}}</li>
+                        </ul>
+                        <div class="user-img">
+                            <img ng-src="{{user.picture.large}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </uib-accordion>
         </div>
     </div>
 </body>
